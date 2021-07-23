@@ -1,5 +1,6 @@
 import requests from "./Assets/requests";
 import Row from "./Components/Row";
+import Banner from "./Components/Banner";
 
 import "./Styles/app.css";
 
@@ -7,7 +8,7 @@ function App() {
   return (
     <>
       <div className="app">
-        <h1>NETFLIX</h1>
+        <Banner />
         <Row title="Trending" url={requests.fetchTrending} />
         <Row title="Top rated" url={requests.fetchTopRated} />
         <Row
