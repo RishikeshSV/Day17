@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import requests from "../Assets/requests";
+import "../Styles/banner.css";
 
 const api = axios.create({
   baseURL: "https://api.themoviedb.org/3",
@@ -30,6 +31,11 @@ function Banner() {
       >
         <div className="content">
           <h1>{movie?.title || movie?.name || movie?.original_name}</h1>
+          <div className="buttons">
+            <button className="button">Play</button>
+            <button className="button">More Info</button>
+          </div>
+          <h1 className="desc">{movie?.overview}</h1>
         </div>
       </header>
     </>
