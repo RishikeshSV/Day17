@@ -14,7 +14,7 @@ function App() {
         <Row title="Trending" url={requests.fetchTrending} />
         <Row title="Top rated" url={requests.fetchTopRated} />
         <Row
-          title="Netflix Originals"
+          title="NETFLIX ORIGINALS"
           url={requests.fetchNetflixOriginals}
           isLargeRow={true}
         />

@@ -22,7 +22,7 @@ const Row = ({ title, url, isLargeRow }) => {
   return (
     <>
       <div className="row">
-        <h2>{title.toUpperCase()}</h2>
+        <h2>{title}</h2>
         <div className="row-posters">
           {movies.map((movie) => {
             return (
