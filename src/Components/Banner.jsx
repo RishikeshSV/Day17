@@ -9,6 +9,9 @@ const api = axios.create({
 });
 const baseImgUrl = "https://image.tmdb.org/t/p/original";
 
+const truncate = (str, n) =>
+  str?.length > n ? str.substr(0, n - 1) + "..." : str;
+
 function Banner() {
   const [movie, setMovie] = useState([]);
   useEffect(() => {
@@ -21,6 +24,7 @@ function Banner() {
     };
     data();
   }, []);
+
   return (
     <>
       <header
@@ -30,12 +34,14 @@ function Banner() {
         }}
       >
         <div className="content">
-          <h1>{movie?.title || movie?.name || movie?.original_name}</h1>
+          <h1 className="title">
+            {movie?.title || movie?.name || movie?.original_name}
+          </h1>
           <div className="buttons">
             <button className="button">Play</button>
             <button className="button">More Info</button>
           </div>
-          <h1 className="desc">{movie?.overview}</h1>
+          <h1 className="desc">{truncate(movie?.overview, 150)}</h1>
         </div>
       </header>
     </>
